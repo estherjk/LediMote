@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1"/>
+  <title>LediMote</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand">
+          LediMote
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- end navbar -->
+
+  <!-- main -->
+  <div class="container">
+
+    <div class="row row-led row-led-first">
+      <div class="col-xs-6">
+        <label for="checkbox-red">Red</label>
+      </div>
+      <div class="col-xs-6">
+        <div class="pull-right">
+          <!-- Just use data-on-color attribute that matches closest to the LED color -->
+          <input type="checkbox" id="checkbox-red" data-on-color="danger">
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-led">
+      <div class="col-xs-6">
+        <label for="checkbox-green">Green</label>
+      </div>
+      <div class="col-xs-6">
+        <div class="pull-right">
+          <!-- Just use data-on-color attribute that matches closest to the LED color -->
+          <input type="checkbox" id="checkbox-green" data-on-color="success">
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-led">
+      <div class="col-xs-6">
+        <label for="checkbox-blue">Blue</label>
+      </div>
+      <div class="col-xs-6">
+        <div class="pull-right">
+          <!-- Just use data-on-color attribute that matches closest to the LED color -->
+          <input type="checkbox" id="checkbox-blue" data-on-color="primary">
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-led">
+      <div class="col-xs-6">
+        <label for="checkbox-yellow">Yellow</label>
+      </div>
+      <div class="col-xs-6">
+        <div class="pull-right">
+          <!-- Just use data-on-color attribute that matches closest to the LED color -->
+          <input type="checkbox" id="checkbox-yellow" data-on-color="warning">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- end main -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
