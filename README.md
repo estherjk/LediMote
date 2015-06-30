@@ -1,6 +1,6 @@
 # LediMote
 
-Remote-controlled LEDs using Intel Edison and Node.js. An [iOS client](https://github.com/drejkim/LediMoteiOS) is also available.
+Remote-controlled LEDs using Intel Edison and Node.js. [iOS](https://github.com/drejkim/LediMoteiOS) and [Android](https://github.com/drejkim/LediMoteAndroid) clients are also available.
 
 The demo uses the JavaScript [MRAA](https://github.com/intel-iot-devkit/mraa) API to interface with Edison's IO. See [led-speech-edison](https://github.com/drejkim/led-speech-edison) for a Python example. The demo also uses [Socket.IO](http://socket.io) (WebSockets) to control the LEDs remotely.
 
@@ -97,7 +97,7 @@ The LEDs should blink on and off simultaneously.
 
 Modify `socket` in `web/app.js`. The section of the code looks like this:
 
-```bash
+```js
 // MODIFY THIS WITH THE APPROPRIATE URL
 var socket = io.connect('http://myedison.local:8080');
 ```
@@ -117,8 +117,12 @@ HTTP server listening on port 8080
 
 ### Using the web client
 
-Open a browser window and navigate to `http://myedison.local:8080`, where `myedison` is the name of your Edison. You should now be able to control the LEDs from the browser!
+Open a browser window and navigate to `http://myedison.local:8080`, where `myedison` is the name of your Edison. You should now be able to control the LEDs from the browser! If you are unable to access the page, make sure your PC is on the same WiFi network as your Edison.
 
 ### Using the iOS client
 
 See [LediMoteiOS](https://github.com/drejkim/LediMoteiOS).
+
+### Using the Android client
+
+See [LediMoteAndroid](https://github.com/drejkim/LediMoteAndroid).
