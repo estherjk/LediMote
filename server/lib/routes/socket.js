@@ -11,10 +11,10 @@ var pins = {
 
 // Initialize LED controls
 var leds = {
-  R: new mraa.Gpio(pins['GP45']),
-  G: new mraa.Gpio(pins['GP44']),
-  B: new mraa.Gpio(pins['GP47']),
-  Y: new mraa.Gpio(pins['GP46'])
+  red: new mraa.Gpio(pins['GP45']),
+  green: new mraa.Gpio(pins['GP44']),
+  blue: new mraa.Gpio(pins['GP47']),
+  yellow: new mraa.Gpio(pins['GP46'])
 };
 
 // Set direction of LED controls to out
@@ -32,22 +32,30 @@ function toggleLeds(leds, state) {
   }
 }
 
+function printLedState(color, state) {
+  console.log('color: ' + color + ', state: ' + state);
+}
+
 // WebSocket communications
 module.exports = function (socket) {
   socket.on('red', function(data) {
-    toggleLed(leds['R'], data.state);
+    toggleLed(leds['red'], data.state);
+    printLedState('red', data.state);
   });
 
   socket.on('green', function(data) {
-    toggleLed(leds['G'], data.state);
+    toggleLed(leds['green'], data.state);
+    printLedState('green', data.state);
   });
 
   socket.on('blue', function(data) {
-    toggleLed(leds['B'], data.state);
+    toggleLed(leds['blue'], data.state);
+    printLedState('blue', data.state);
   });
 
   socket.on('yellow', function(data) {
-    toggleLed(leds['Y'], data.state);
+    toggleLed(leds['yellow'], data.state);
+    printLedState('yellow', data.state);
   });
 
   // Handle Ctrl+C event
