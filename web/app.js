@@ -16,6 +16,16 @@ for(var color in checkboxes) {
 
 /// Send state of checkboxes to server via WebSockets
 
+socket.on('connect', function() {
+  socket.emit('hello');
+});
+
+socket.on('init', function(data) {
+  for(var color in data) {
+    checkboxes[color].bootstrapSwitch('state', data[color]);
+  }
+});
+
 socket.on('red', function(data) {
   checkboxes['red'].bootstrapSwitch('state', data.state);
 });
