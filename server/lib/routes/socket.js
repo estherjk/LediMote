@@ -38,24 +38,44 @@ function printLedState(color, state) {
 
 // WebSocket communications
 module.exports = function (socket) {
+  socket.on('hello', function() {
+    console.log('hello');
+
+    var data = {};
+    for(var color in leds) {
+      data[color] = leds[color].read() == 1 ? true : false;
+    }
+
+    console.log(data);
+    socket.emit('init', data);
+  });
+
   socket.on('red', function(data) {
     toggleLed(leds['red'], data.state);
     printLedState('red', data.state);
+
+    socket.broadcast.emit('red', data);
   });
 
   socket.on('green', function(data) {
     toggleLed(leds['green'], data.state);
     printLedState('green', data.state);
+
+    socket.broadcast.emit('green', data);
   });
 
   socket.on('blue', function(data) {
     toggleLed(leds['blue'], data.state);
     printLedState('blue', data.state);
+
+    socket.broadcast.emit('blue', data);
   });
 
   socket.on('yellow', function(data) {
     toggleLed(leds['yellow'], data.state);
     printLedState('yellow', data.state);
+
+    socket.broadcast.emit('yellow', data);
   });
 
   // Handle Ctrl+C event
