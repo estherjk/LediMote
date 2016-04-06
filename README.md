@@ -42,7 +42,9 @@ opkg install git
 
 With `git` installed, we can now clone this repository onto Edison.
 
-### Edison helper scripts
+### Installing MRAA using Edison helper scripts
+
+*Note: Newer versions of the Edison firmware may already have MRAA installed, so this step may be unnecessary.*
 
 [edison-scripts](https://github.com/drejkim/edison-scripts) provides a set of scripts for simplifying some things on Edison. Although only one script is needed for this demo, it may be useful for future projects. To use it, do the following:
 
